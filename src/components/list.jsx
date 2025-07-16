@@ -1,11 +1,13 @@
 import TodoItem from "./task";
 
-function TodoList(){
+function TodoList(props){
+  const {todos} = props;
     return (
-      <ul class="list-group">
-        <TodoItem name="Task 1" />
-        <TodoItem name="Task 2" />
-        <TodoItem name="Task 3" />
+      <ul className="list-group">
+        {todos.map((task) => {
+          const {id, label, isCompleted} = task;
+          return <TodoItem key={id} label={label} isCompleted={isCompleted} />
+        })}
       </ul>
     );
 }
