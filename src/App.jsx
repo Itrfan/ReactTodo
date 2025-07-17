@@ -27,7 +27,7 @@ function App() {
     >
       <div className="card-body">
         <h3 className="card-title mb-3">My Todo List</h3>
-        <TodoList todos={todos} />
+        <TodoList todos={todos} setList={setList} />
         <div className="mt-4">
           <AddTodoForm
             onAddNew={(newValue) => {
